@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BTN SOSMED</title>
+    <meta name="description" content="Chat application" />
+
+    <!-- Toggles CSS -->
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+    <!-- <link href="vendors/chosen-select/chosen.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="vendors/datatables.net-bs4/css/dataTables.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- devexpress  -->
+    <link href="vendors/devex/dx.light.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Begin emoji-picker Stylesheets -->
+    <!-- <link rel="stylesheet" href="dist/emoji/tw.emojipicker.css"> -->
+    
+    <!-- dhx plugin -->
+    <!-- <link rel="stylesheet" href="dist/dhx/suite.css" /> -->
+    <!-- <link rel="stylesheet" href="dist/dhx/index.css" /> -->
+</head>
+
+<body class="dx-viewport">
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper pb-0 pt-0 hk-vertical-nav" style="margin-left: 0 !important; ">
+            <!-- Container -->
+            <div class="container-fluid">
+                <!-- Row -->
+            <div class="row">
+                <div class="col-xl-12 pa-0">
+                    <div class="chatapp-wrap">
+                        <div class="chatapp-left">
+                            <header>
+                                <div class="pa-15 hide">
+                                    <center>
+                                    <span class="d-block text-capitalize font-14">Queue</span>
+                                    <span class="badge badge-dark font-14" id="JmlQue">0</span>
+                                    </center>
+                                </div>
+                                <div class="pa-15">
+                                    <!-- <center> -->
+                                        <span class="d-block text-capitalize font-14">Agent Status</span>
+                                        <span class="badge badge-warning font-14" id="AgentStatus">Not Ready</span>
+                                    <!-- </center> -->
+                                </div>
+                                <div class="pa-15">
+                                    <center>
+                                    <span class="d-block text-capitalize font-14">Live</span>
+                                    <span class="badge badge-primary font-14" id="JmlLive">0</span>
+                                    </center>
+                                </div>
+                            </header>
+                            <form role="search" class="chat-search">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="feather-icon"><i data-feather="search"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search" id="TxtSearchCustomer">
+                                </div>
+                            </form>
+                            
+                            <div class="chatapp-users-list">
+                                <div class="nicescroll-bar" id="ListAllCustomer"></div>
+                            </div>
+                        </div>
+
+                        <div class="chatapp-right">
+                            <header>
+                                <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
+                                    <span class="feather-icon"><i data-feather="chevron-left"></i></span>
+                                </a>
+                                <div class="media hide" id="ChatAktif">
+                                    <div class="media-img-wrap">
+                                        <div class="avatar border rounded-50 border-2 border-grey" id="ImgCustomerIcon">
+                                            <!-- <img src="dist/img/user.png" alt="user" class="avatar-img rounded-circle"> -->
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="user-name" id="TxtCustomerName">Customer Name</div>
+                                        <div class="user-status" id="TxtCustomerID">Customer ID</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chat-options-wrap hide" id="ChatOptions">
+                                    <button class="btn btn-warning btn-rounded btn-sm mr-10" title="Update Profile Customer" id="BtnCustProfile">
+                                        <span class="icon-label"><i class="fa fa-edit"></i></span> Update Profile
+                                    </button>
+                                    <button class="btn btn-danger btn-rounded btn-sm mr-10 " title="End Chat" id="BtnEndChat">
+                                        <span class="icon-label"><i class="fa fa-ban"></i></span> End Chat
+                                    </button>
+                                    <button class="btn btn-primary btn-rounded btn-sm mr-10 hide" title="Information" id="BtnInfoCust">
+                                        <span class="icon-label"><i class="fa fa-info-circle"></i></span>
+                                    </button>
+                                    <div class="inline-block dropdown hide">
+                                        <button class="btn btn-dark btn-rounded btn-sm mr-10 " title="Options" data-toggle="dropdown" aria-expanded="false" >
+                                            <span class="icon-label"><i class="fa fa-ellipsis-h"></i></span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#">Sugestion</a>
+                                            <a class="dropdown-item" href="#">Knowledge</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                            
+                            <div class="chat-body">
+                                <div class="nicescroll-bar DataConversation">
+                                    <div class="list-unstyled" id="DataConversation" style="margin:20px;"></div>
+                                </div>
+                            </div>									
+                            
+                            <footer id="FormSend" class="hide">
+                                <div class="input-group">
+                                    <input type="text" id="Messages" class="input-msg-send form-control" placeholder="Type messages...">
+                                    <div class="input-group-append hide">
+                                        <button type="button" class="btn btn-light" id="BtnEmoji" title="Emoji Picker">
+                                            <span><i class="material-icons">emoji_emotions</i></span>
+                                        </button>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <input type="file" id="FileAttach" class="hide">
+                                        <button type="button" class="btn btn-light" id="BtnFileAttach" title="Attachment File" onclick="document.querySelector('#FileAttach').click();">
+                                            <span><i class="material-icons">attach_file</i></span>
+                                        </button>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-light" id="BtnSendMsg" title="Send Messages">
+                                            <span><i class="material-icons">send</i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </footer>
+                            
+                            
+                            <!-- hidden feature -->
+                            <input type="hidden" id="IsNew">
+                            <input type="hidden" id="AgentID">
+                            <input type="hidden" id="AgentName">
+                            <input type="hidden" id="ChatID">
+                            <input type="hidden" id="CustomerID">
+                            <input type="hidden" id="CustIdentity">
+                            <input type="hidden" id="CustID_tChat">
+                            <input type="hidden" id="UserID">
+                            <input type="hidden" id="Email">
+                            <input type="hidden" id="AssignTo">
+                            <input type="hidden" id="PageID">
+                            <input type="hidden" id="RoomID">
+                            <input type="hidden" id="AlamatIP">
+                            <input type="hidden" id="Resultbase64">
+                            <input type="hidden" id="SrcResultbase64">
+                            <input type="hidden" id="NameResultbase64">
+                        </div>
+                    </div>
+                </div>
+            </div>				
+            <!-- /Row -->
+            </div>
+            <!-- /Container -->
+        </div>
+        <!-- /Main Content -->
+
+        <div class="demo-container">
+            <div id="container">
+                <div id="ModalCustomerProfile"></div>
+                <div id="ModalDataCustomer"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /HK Wrapper -->
+
+
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <!-- FeatherIcons JavaScript -->
+    <script src="dist/js/feather.min.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <!-- <script src="vendors/chosen-select/chosen.min.js"></script> -->
+    <!-- <script src="vendors/datatables.net-bs4/js/jquery.dataTables.min.js"></script> -->
+    <!-- <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script> -->
+    <script src="dist/js/toggle-data.js"></script>
+    <!-- devexpress js -->
+    <script src="vendors/devex/dx.all.js"></script>
+
+    <!-- Begin emoji-picker JavaScript -->
+    <!-- <script src="dist/emoji/tw.emojipicker.js"></script> -->
+    <!-- <script src="dist/emoji/twemoji.min.js"></script> -->
+
+    <!-- Init JavaScript -->
+    <script src="dist/js/init.js"></script>
+    <script src="dist/js/sweetalert.min.js"></script>
+    <!-- <script src="dist/dhx/suite.js"></script> -->
+
+    <!--Script Sosmed -->
+    <script src="scripts/soundcontrol.js" type="text/javascript"></script>
+    <script src="scripts/jquery.signalR-2.4.0.min.js"></script>
+    <!-- <script src="https://invision.ddns.net:30008/signalr/signalr/hubs"></script>  -->
+    <!-- <script src="https://selindo.mendawai.com/signalr/signalr/hubs"></script>  -->
+    <script src="https://selindo.mendawai.com:30008/signalr/hubs"></script> 
+    <script src="scripts/signalr.sosmed.js" type="module"></script>
+    <!-- <script src="scripts/customer.profile.js"></script> -->
+
+    <script type="text/javascript">
+        /* $(document).ready(function() {
+            $('#BtnEmoji').twEmojiPicker({
+                closeOnSelect: false,
+                twemoji: true,
+                onSelect: function(emoji){
+                    // console.log(emoji);
+                    const Messages = document.getElementById('Messages');
+                    let p = document.createElement('p');
+                    p.innerHTML = emoji.value;
+                    Messages.value += p.innerHTML;
+                }
+            });  
+        }); */
+    </script>
+</body>
+
+</html>

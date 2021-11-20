@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dash Sentiment</title>
+    <meta name="description" content="Chat application" />
+
+    <!-- Toggles CSS -->
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+  
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
+
+        <!-- Header Content -->
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hide">
+            <a class="navbar-brand" href="#">
+                <img class="brand-img d-inline-block mr-10" src="dist/img/BTN_BRAND.png" height="35" alt="brand" /> 
+            </a>
+        </nav>
+        <!-- /Header Content -->
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper pb-10 pt-10 hk-vertical-nav mx-0">
+            <!-- Container -->
+            <div class="container-fluid">
+                <!-- Title -->
+			<div class="hk-pg-header align-items-top">
+				<div>
+					<h2 class="hk-pg-title font-weight-600">Sentiment Analysis</h2>
+					<p>Monitoring sentiment sosial media.</p>
+				</div>
+                <div class="d-flex">
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-outline-primary active">Today</button>
+                        <button type="button" class="btn btn-outline-primary">Past 7 days</button>
+                        <button type="button" class="btn btn-outline-primary">Past 30 days</button>
+                        <!-- <button type="button" class="btn btn-outline-primary">Past 3 monts</button> -->
+                    </div>
+                </div>
+			</div>
+			<!-- /Title -->
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hk-row">
+                            <div class="col-lg-5">
+                                <div class="card shadow-none">
+                                    <div class="card-header card-header-action">
+                                        <h6>Overall Sentiment Level</h6>
+                                        <button class="btn btn-xs btn-default" id="btn_refresh" data-toggle="tooltip" data-placement="top" title="Refresh Data"><i class="fa fa-refresh"></i></button>
+                                    </div>
+                                    <div class="card-body" id="sentiment_overall" style="height:300px;overflow-x:auto;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4">
+                                <div class="card shadow-none">
+                                    <div class="card-header card-header-action">
+                                        <h6>Comments Sentiment</h6>
+                                    </div>
+                                    <div class="card-body d-flex align-items-center justify-content-between" style="height:300px;">
+                                        <div class="">
+                                            <div id="sentiment_comments"></div>
+                                        </div>
+                                        <div class="align-items-center">
+                                            <div class="card card-sm border-1 shadow-none">
+                                                <div class="card-body">
+                                                    <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Positive</span>
+                                                    <div class="d-flex align-items-end justify-content-between">
+                                                        <div>
+                                                            <span class="d-block">
+                                                                <span class="font-weight-400 text-dark"><i class="fa fa-refresh"></i> 8,725</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card card-sm border-1 shadow-none">
+                                                <div class="card-body">
+                                                    <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Negative</span>
+                                                    <div class="d-flex align-items-end justify-content-between">
+                                                        <div>
+                                                            <span class="d-block">
+                                                                <span class="font-weight-400 text-dark"><i class="fa fa-refresh"></i> 8,725</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card card-sm border-1 shadow-none">
+                                                <div class="card-body">
+                                                    <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Neutral</span>
+                                                    <div class="d-flex align-items-end justify-content-between">
+                                                        <div>
+                                                            <span class="d-block">
+                                                                <span class="font-weight-400 text-dark"><i class="fa fa-refresh"></i> 8,725</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+
+                                <div class="card card-sm shadow-none">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <div>
+                                                <span class="d-block font-15 text-dark font-weight-500">Comments</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-success font-14 font-weight-500">+10%</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="d-block display-4 text-dark mb-5">172,458</span>
+                                            <small class="d-block">72,458 Target Users</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-sm shadow-none">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <div>
+                                                <span class="d-block font-15 text-dark font-weight-500">Users</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-success font-14 font-weight-500">+10%</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="d-block display-4 text-dark mb-5">2,458</span>
+                                            <small class="d-block">5,458 Target Users</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="hk-row">
+                            <div class="col-lg-12">
+                                <div class="card shadow-none">
+                                    <div class="card-header card-header-action">
+                                        <h6>Sentiment Timeline</h6>
+                                        <div class="pull-right">
+                                            <span class="badge badge-warning">Sentiment Score</span>
+                                            <span class="badge badge-success">Positive</span>
+                                            <span class="badge badge-info">Neutral</span>
+                                            <span class="badge badge-danger">Negative</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body pa-0">
+                                        <div id="sentiment_timeline"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <!-- FeatherIcons JavaScript -->
+    <script src="dist/js/feather.min.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="dist/js/toggle-data.js"></script>
+    
+
+    
+    <!--HIGHCHART-->
+	<script type="text/javascript" src="vendors/highchart/highchart.js"></script>
+	<script type="text/javascript" src="vendors/highchart/highchart-more.js"></script>
+    <!-- script -->
+    <script src="scripts/dash_sentiment.js"></script>
+
+   
+</body>
+
+</html>

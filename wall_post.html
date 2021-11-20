@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BTN SOSMED</title>
+    <meta name="description" content="Chat application" />
+
+    <!-- Toggles CSS -->
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+
+	<!-- select2 CSS -->
+    <link href="vendors/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+	<!-- devexpress  -->
+    <link href="vendors/devex/dx.light.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="dx-viewport">
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
+
+        <!-- Header Content -->
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
+            <ul class="nav nav-light nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a href="#" class="d-flex h-60p align-items-center" id="BtnCreatePost">Create New Post</a>
+                </li>
+				
+            </ul>
+			<ul class="navbar-nav hk-navbar-content">
+				<li class="nav-item">
+					<select class="form-control custom-select custom-select-sm" id="SelectAccount">
+						<option value="All Post" selected>All Post</option>
+					</select>
+                </li>
+			</ul>
+        </nav>
+        <!-- /Header Content -->
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper pb-0 hk-vertical-nav" style="margin-left: 0 !important; ">
+            <!-- Container -->
+            <div class="container-fluid">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-xl-12 pa-0">
+                        
+						<div class="tab-content  mt-20">
+							<div class="tab-pane fade show active" role="tabpanel">
+								<div class="container">
+									<div class="hk-row" id="ListDataWallPost">
+                                        <div class="col-lg-6" id="ListDataWallPostODD"></div>
+									    <div class="col-lg-6" id="ListDataWallPostEven"></div>
+                                    </div>
+                                    <div id="popup"></div>
+								</div>
+							</div>
+						</div>	
+					</div>
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <!-- FeatherIcons JavaScript -->
+    <script src="dist/js/feather.min.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="dist/js/toggle-data.js"></script>
+	<!-- devexpress js -->
+    <script src="vendors/devex/dx.all.js"></script>
+
+	<!-- Select2 JavaScript -->
+    <script src="vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- Init JavaScript -->
+    <script src="dist/js/init.js"></script>
+    <script src="dist/js/sweetalert.min.js"></script>
+
+	<script src="scripts/wall_post.js"></script>
+
+</body>
+
+</html>

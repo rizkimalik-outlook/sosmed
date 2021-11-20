@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>DASH SOSMED</title>
+    <meta name="description" content="Chat application" />
+
+    <!-- Toggles CSS -->
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+    <link href="vendors/chosen-select/chosen.min.css" rel="stylesheet" type="text/css">
+    <!-- <link href="vendors/datatables.net-bs4/css/dataTables.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- dhx plugin -->
+    <link rel="stylesheet" href="dist/dhx/suite.css" />
+    <link rel="stylesheet" href="dist/dhx/index.css" />
+</head>
+
+<body>
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
+
+        <!-- Header Content -->
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hide">
+            <a class="navbar-brand" href="#">
+                <img class="brand-img d-inline-block mr-10" src="dist/img/BTN_BRAND.png" height="35" alt="brand" /> 
+            </a>
+        </nav>
+        <!-- /Header Content -->
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper pb-10 pt-10 hk-vertical-nav" style="margin-left: 0 !important; ">
+            <!-- Container -->
+            <div class="container-fluid">
+                <!-- Title -->
+			<div class="hk-pg-header align-items-top">
+				<div>
+					<h2 class="hk-pg-title font-weight-600">Dashboard Channel</h2>
+					<p>Monitoring activity sosial media.</p>
+				</div>
+			</div>
+			<!-- /Title -->
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hk-row">
+                            <div class="col-sm-12">
+                                <div class="card-group hk-dash-type-2">
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">All Channel</span>
+                                                </div>
+                                                <!-- <div>
+                                                    <span class="font-14 font-weight-500">Que(<span id="QueAllChannel">0</span>)</span>
+                                                </div> -->
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/all_channel.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtAllChannel">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Chat</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/chat.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtChat">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Messenger</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/messenger.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtFBMessenger">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Facebook Feeds</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/facebook.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtFBFeed">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Facebook Mention</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/facebook.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtFBMention">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hk-row">
+                            <div class="col-sm-12">
+                                <div class="card-group hk-dash-type-2">
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Twitter Mention</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/twitter.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtTWMention">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Twitter DM</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/twitter_dm.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtDMTwitter">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Whatsapp</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/whatsapp.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtWhatsapp">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Instagram Feeds</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/instagram.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtIGFeed">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <div>
+                                                    <span class="d-block font-15 text-dark font-weight-500">Email</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="d-block display-4 text-dark mb-5">
+                                                    <img src="dist/img/icon/email.png" height="30px" alt="user" class="avatar-img rounded-circle"> 
+                                                    <span class="counter-anim" id="txtEmail">0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-40 mb-30">
+                            <h5 class="d-flex align-items-end">Channel Detail <i class="ion ion-md-help-circle-outline text-light font-21 ml-10"
+                                    data-toggle="tooltip" data-placement="top"
+                                    title="Untuk melihat activity data summary"></i></h5>
+                        </div>
+                        <div class="hk-row">
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Grafik Channel Detail</h6>
+                                        <button class="btn btn-xs btn-default" id="btn_refresh" data-toggle="tooltip" data-placement="top" title="Refresh Data"><i class="fa fa-refresh"></i></button>
+                                    </div>
+                                    <div class="card-body" id="grafik_detail_channel" style="height:350px;overflow-x:auto;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Agent Online</h6>
+                                        <span class="badge badge-primary pull-right" id="jml_agent">0</span>
+                                    </div>
+                                    <div class="card-body" style="height:350px;overflow-x:auto;">
+                                        <div class="user-activity user-activity-sm" id="list_agent">
+                                            <!-- <div class="media">
+                                                <div class="media-img-wrap">
+                                                    <div class="avatar avatar-xs">
+                                                        <img src="dist/img/agent.png"
+                                                            alt="user" class="avatar-img rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <span class="d-block mb-5">
+                                                            <span class="font-weight-500 text-dark text-capitalize">Agent 1</span>
+                                                            <small class="pull-right">online</small>
+                                                        </span>
+                                                        <span class="d-block font-13">3 hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="hk-row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Last Channel Activity</h6>
+                                        <div class="pull-right">
+                                            Total Que  <span class="badge badge-primary" id="TotalQue">0</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body pa-0" style="height:350px;overflow-x:auto;">
+                                        <div class="table-wrap">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Channel</th>
+                                                            <th>Customer ID</th>
+                                                            <th>Name</th>
+                                                            <th>Messages</th>
+                                                            <th>Date Created</th>
+                                                            <th>Agent Handle</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbl_dashchannel">
+                                                        <!-- <tr>
+                                                            <td>
+                                                                <div class="media align-items-center">
+                                                                    <div class="media-img-wrap d-flex mr-10">
+                                                                        <div class="avatar avatar-xs">
+                                                                            <img src="dist/img/agent.png" alt="user" class="avatar-img rounded-circle">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <span class="d-block">Amank Chunk</span>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>123123</td>
+                                                            <td>anto</td>
+                                                            <td>
+                                                                <span class="w-130p d-block text-truncate">hasdaj a kjsdajsd aj a k jj j j j j jjjjjjjjjj</span>
+                                                            </td>
+                                                            <td>
+                                                                22/10/2018
+                                                            </td>
+                                                        </tr> -->
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <!-- FeatherIcons JavaScript -->
+    <script src="dist/js/feather.min.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="vendors/chosen-select/chosen.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="dist/js/toggle-data.js"></script>
+    <!-- Init JavaScript -->
+    <!-- <script src="dist/js/init.js"></script> -->
+    <script src="dist/js/sweetalert.min.js"></script>
+    <script src="dist/dhx/suite.js"></script>
+
+    
+    <!--HIGHCHART-->
+	<script type="text/javascript" src="vendors/highchart/highchart.js"></script>
+	<script type="text/javascript" src="vendors/highchart/highchart-more.js"></script>
+    <!-- script dash channel -->
+    <script src="scripts/dash_channel.js"></script>
+
+   
+</body>
+
+</html>

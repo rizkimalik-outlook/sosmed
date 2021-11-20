@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BTN SOSMED</title>
+    <meta name="description" content="Chat application" />
+
+    <!-- Toggles CSS -->
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+    <!-- devexpress  -->
+    <link href="vendors/devex/dx.light.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
+
+        <!-- Header Content -->
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hide">
+            <a class="navbar-brand" href="#">
+                <img class="brand-img d-inline-block mr-10" src="dist/img/BTN_BRAND.png" height="35" alt="brand" /> 
+            </a>
+        </nav>
+        <!-- /Header Content -->
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper pb-10 pt-10 hk-vertical-nav" style="margin-left: 0 !important; ">
+            <!-- Container -->
+            <div class="container-fluid">
+                <!-- Title -->
+                <div class="hk-pg-header align-items-top">
+                    <div>
+                        <h2 class="hk-pg-title font-weight-600">Subscribe Account</h2>
+                        <p>Activation your account sosial media to API.</p>
+                    </div>
+                </div>
+                <!-- /Title -->
+
+                <!-- Row -->
+                <div class="hk-row">
+                    <div class="col-lg-12 mb-20">
+                        <div class="card">
+                            <div class="card-header card-header-action">
+                                <h6>API Sosial Media </h6>
+                            </div>
+                            <div class="card-body pa-0">
+                                <div class="table-wrap">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <!-- <thead>
+                                                <tr>
+                                                    <th>Channel API</th>
+                                                    <th>Feature</th>
+                                                </tr>
+                                            </thead> -->
+                                            <tbody id="table_agent_create">
+                                                <tr>
+                                                    <td>
+                                                        <div class="media align-items-center">
+                                                            <div class="media-img-wrap d-flex mr-10">
+                                                                <div class="avatar avatar-xs">
+                                                                    <img src="dist/img/icon/facebook.png" alt="facebook" class="avatar-img rounded-circle">
+                                                                </div>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <span class="d-block">Facebook</span> 
+                                                                <a href="#" onclick="popupwindow('https://mendawai.com/sosialapi/sosial/facebook/facebook/loginlink','fb','1000','600')"><span class="badge badge-primary">Subscribe</span></a>
+                                                                <!-- <a href="#" onclick="popupwindow('https://cs.icephone.id/sosialapi/sosial/facebook/facebook/loginlink','fb','1000','600')"><span class="badge badge-primary">Subscribe</span></a> -->
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="media align-items-center">
+                                                            <div class="media-img-wrap d-flex mr-10">
+                                                                <div class="avatar avatar-xs">
+                                                                    <img src="dist/img/icon/twitter.png" alt="twitter" class="avatar-img rounded-circle">
+                                                                </div>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <span class="d-block">Twitter</span> 
+                                                                <a href="#" onclick="popupwindow('https://mendawai.com/sosialapi/sosial/twitter/twitter/getOaUTHtoken','tw','1000','600')"><span class="badge badge-primary">Subscribe</span></a>
+                                                                <!-- <a href="#" onclick="popupwindow('https://cs.icephone.id/sosialapi/sosial/twitter/twitter/getOaUTHtoken','tw','1000','600')"><span class="badge badge-primary">Subscribe</span></a> -->
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="media align-items-center">
+                                                            <div class="media-img-wrap d-flex mr-10">
+                                                                <div class="avatar avatar-xs">
+                                                                    <img src="dist/img/icon/instagram.png" alt="instagram" class="avatar-img rounded-circle">
+                                                                </div>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <span class="d-block">Instagram</span> 
+                                                                <a href="#" onclick="popupwindow('https://mendawai.com/sosialapi/sosial/instagram/instagram/loginlink','ig','1000','600')"><span class="badge badge-primary">Subscribe</span></a>
+                                                                <!-- <a href="#" onclick="popupwindow('https://cs.icephone.id/sosialapi/sosial/instagram/instagram/loginlink','ig','1000','600')"><span class="badge badge-primary">Subscribe</span></a> -->
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header card-header-action">
+                                <h6>Account Channel</h6>
+                                <button class="btn btn-xs btn-default" id="BtnRefresh" data-toggle="tooltip" data-placement="top" title="Refresh Data"><i class="fa fa-refresh"></i> Refresh</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="demo-container">
+                                    <div id="tbl_account_channel"></div>
+                                    <!-- <div class="options">
+                                        <div class="caption">Options</div>
+                                        <div class="option">            
+                                            <div id="autoExpand"></div>
+                                        </div>    
+                                    </div> -->
+                                </div>
+                                <!-- <div class="table-wrap">
+                                    <table class="table table-hover mb-0 datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Channel</th>
+                                                <th>Page Name</th>
+                                                <th>Page ID</th>
+                                                <th>Account</th>
+                                                <th>Account ID</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbl_account_channel"></tbody>
+                                    </table>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <!-- FeatherIcons JavaScript -->
+    <script src="dist/js/feather.min.js"></script>
+    <!-- chosen -->
+    <script src="vendors/chosen-select/chosen.min.js"></script>
+    <!-- devexpress js -->
+    <script src="vendors/devex/dx.all.js"></script>
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="dist/js/toggle-data.js"></script>
+    <!-- Init JavaScript -->
+    <!-- <script src="dist/js/init.js"></script> -->
+    <script src="dist/js/sweetalert.min.js"></script>
+
+    <!-- script custom -->
+    <script>
+        function popupwindow(url, title, w, h) {
+            var left = (screen.width/2)-(w/2);
+            var top = (screen.height/2)-(h/2);
+            return window.open(url, '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+        } 
+    </script>
+    <script src="scripts/subscribe_account.js"></script>
+
+   
+</body>
+
+</html>
