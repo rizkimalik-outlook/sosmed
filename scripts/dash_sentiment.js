@@ -388,7 +388,6 @@ async function dash_timeline() {
 
 
 function get_periode(value) {
-    // console.log(value);
     if (value === null) {
         localStorage.setItem('periode', 'today');
     }
