@@ -134,10 +134,11 @@ const SentimentTimeline = Highcharts.chart('sentiment_timeline', {
         },
         labels: {
             style: {
-                color: Highcharts.getOptions().colors[3]
+                color: '#f7a35c'
             }
         },
-        opposite: true
+        opposite: true,
+        crosshair: true
     }],
     plotOptions: {
         column: {
@@ -173,7 +174,7 @@ const SentimentTimeline = Highcharts.chart('sentiment_timeline', {
         data: [9, 17, 13, 16, 13],
         marker: {
             lineWidth: 2,
-            lineColor: Highcharts.getOptions().colors[3],
+            lineColor: '#f7a35c',
             fillColor: 'white'
         }
     }] */
@@ -363,7 +364,10 @@ async function dash_timeline() {
 
             let dataSeries=[];
             for(var i=0; i < result.length; i++){
-                dataSeries.push({name:result[i].Waktu, y:result[i].Score})
+                dataSeries.push({
+                    name:result[i].Waktu, 
+                    y:(Number(result[i].Score) / 3)
+                })
             }
 
             //? series score
@@ -372,9 +376,11 @@ async function dash_timeline() {
                 name: 'Average Score',
                 yAxis: 1,
                 data: dataSeries,
+                color: '#f7a35c',
                 marker: {
+                    symbol: 'circle',
                     lineWidth: 2,
-                    lineColor: "#f7a35c",
+                    lineColor: '#f7a35c',
                     fillColor: 'white'
                 }
             }); 
